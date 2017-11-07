@@ -12,7 +12,7 @@ var Slides = Backbone.Collection.extend({
   parse: function(data) {
     data.slides.forEach(function(slide, index) {
       slide.url = '';
-      slide.index = index;
+      slide.id = index;
     });
     return data.slides;
   },
@@ -33,22 +33,22 @@ var SlideView = Backbone.View.extend({
     'click .carousel-next': 'next',
   },
   next: function() {
-    var index = this.model.attributes.index;
-    $('div[data-index=' + index + ']').fadeOut(function() {
-      $('div[data-index=' + (index + 1) + ']').fadeIn();
+    var id = this.model.attributes.id;
+    $('div[data-id=' + id + ']').fadeOut(function() {
+      $('div[data-id=' + (id + 1) + ']').fadeIn();
     });
   },
   prev: function() {
-    var index = this.model.attributes.index;
-    $('div[data-index=' + index + ']').fadeOut(function() {
-      $('div[data-index=' + (index - 1) + ']').fadeIn();
+    var id = this.model.attributes.id;
+    $('div[data-id=' + id + ']').fadeOut(function() {
+      $('div[data-id=' + (id - 1) + ']').fadeIn();
     });
   },
   initialize: function() {
     this.template = _.template($('.slides-list-template').html());
   },
   render: function() {
-    $('div[data-index="0"]').show();
+    $('div[data-id="0"]').show();
     this.$el.html(this.template(this.model.toJSON()));
     return this;
   },

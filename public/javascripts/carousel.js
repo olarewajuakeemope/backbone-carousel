@@ -48,7 +48,6 @@ var SlideView = Backbone.View.extend({
     this.template = _.template($('.slides-list-template').html());
   },
   render: function() {
-    $('div[data-id="0"]').show();
     this.$el.html(this.template(this.model.toJSON()));
     return this;
   },
@@ -63,15 +62,27 @@ var SlidesView = Backbone.View.extend({
   },
   render: function() {
     var self = this;
+
+    // empty the target DOM element
     this.$el.html('');
+
     _.each(this.model.toArray(), function(slide) {
       var images = slide.get('images');
+
+      // set random image url from Array of Images urls
       var randomInt = Math.floor(Math.random() * images.length);
-      self.$el.append((new SlideView({ model: slide })).render().$el);
       slide.set('url', images[randomInt]);
+
+      self.$el.append((new SlideView({ model: slide })).render().$el);
     });
+
+    // display first slide on page load
+    $('div[data-id="0"]').show();
+
+    // disable first and last nav buttons on page load
     $('.carousel-prev:first').prop('disabled', true);
     $('.carousel-next:last').prop('disabled', true);
+
     return this;
   },
 });

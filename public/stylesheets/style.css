@@ -1,0 +1,70 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+  text-align: center;
+}
+
+.carousel-item {
+  display: none;
+  position: relative; 
+  padding: 0 30px;
+}
+.carousel-item .carousel-prev {
+  outline: none;
+  position: absolute;
+  z-index: 3;
+  display: block;
+  right: 85%;
+  top: 50%;
+  color: #ffffff;
+  transform: translateY(-50%);
+  padding: 20px 15px;
+  border-top: 2px solid #fdc84b;
+  border-right: 2px solid #fdc84b;
+  border-bottom: 2px solid #fdc84b;
+  border-left: 2px solid #fdc84b;
+  margin-right: -2px;
+  cursor: pointer;
+}
+.carousel-item .carousel-next {
+  outline: none;
+  position: absolute;
+  z-index: 3;
+  display: block;
+  left: 85%;
+  top: 50%;
+  color: #ffffff;
+  transform: translateY(-50%);
+  padding: 20px 15px;
+  border-top: 2px solid #fdc84b;
+  border-right: 2px solid #fdc84b;
+  border-bottom: 2px solid #fdc84b;
+  border-left: 2px solid #fdc84b;
+  margin-left: -2px;
+  cursor: pointer;
+}
+.carousel-item .carousel-title {
+  position: absolute;
+  z-index: 5;
+  left: 25%;
+  top: 25%;
+  margin: 16px 0 0 20px;
+  color: #ffffff;
+  font-size: 100px;
+  text-shadow: 2px 2px 4px #fdc84b;
+}
+.carousel-item button:disabled {
+  cursor: initial;
+  border: none;
+}
+img {
+  width: 100%;
+  height: 50%;
+}

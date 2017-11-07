@@ -89,6 +89,9 @@ var slidesView = new SlidesView();
 // Instantiate script
 
 $(document).ready(function() {
-  $('.carousel-prev:first').prop('disabled', true);
-  $('.carousel-next:last').prop('disabled', true);
+  setTimeout(function(){
+    $('.carousel-prev:first').prop('disabled', true);
+    $('.carousel-next:last').prop('disabled', true);
+  }, 200);
+
 });

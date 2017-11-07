@@ -89,5 +89,5 @@ var SlidesView = Backbone.View.extend({
 });
 
 // Instantiate All Slides View
-var slidesView = new SlidesView();
+new SlidesView();
 

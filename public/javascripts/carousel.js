@@ -11,6 +11,7 @@ var Slides = Backbone.Collection.extend({
   url: '/slides',
   parse: function(data) {
     data.slides.forEach(function(slide, index) {
+      // assign extra properties to fetched models
       slide.url = '';
       slide.id = index;
     });
@@ -69,7 +70,7 @@ var SlidesView = Backbone.View.extend({
     _.each(this.model.toArray(), function(slide) {
       var images = slide.get('images');
 
-      // set random image url from Array of Images urls
+      // set random image url from Array of Image urls
       var randomInt = Math.floor(Math.random() * images.length);
       slide.set('url', images[randomInt]);
 

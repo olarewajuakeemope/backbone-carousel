@@ -66,10 +66,12 @@ var SlidesView = Backbone.View.extend({
     this.$el.html('');
     _.each(this.model.toArray(), function(slide) {
       var images = slide.get('images');
-      var randomInt = Math.floor(Math.random() * 3);
+      var randomInt = Math.floor(Math.random() * images.length);
       self.$el.append((new SlideView({ model: slide })).render().$el);
       slide.set('url', images[randomInt]);
     });
+    $('.carousel-prev:first').prop('disabled', true);
+    $('.carousel-next:last').prop('disabled', true);
     return this;
   },
 });
@@ -77,10 +79,3 @@ var SlidesView = Backbone.View.extend({
 // Instantiate All Slides View
 var slidesView = new SlidesView();
 
-// Instantiate script
-$(document).ready(function() {
-  setTimeout(function() {
-    $('.carousel-prev:first').prop('disabled', true);
-    $('.carousel-next:last').prop('disabled', true);
-  }, 200);
-});

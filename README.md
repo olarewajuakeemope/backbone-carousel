@@ -15,14 +15,8 @@ Backbone Carousel Demo is implemented using a number few technologies:
 * Backbone - Implements MVC on the client
 * Underscore -Backbone dependency
 * Jquery - Backbone dependency
-* [node.js] - evented I/O for the backend
-* [express] - Serves development and production builds]
-
-
-   [backbone]: <http://backbonejs.org/>
-   [underscore]: <http://underscorejs.org//>
-   [node.js]: <http://nodejs.org>
-   [express]: <http://expressjs.com/>
+* node.js - evented I/O for the backend
+* express - Serves development and production builds
 
 ## Usage
 1. Fork this repository to your GitHub account

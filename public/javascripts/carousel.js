@@ -36,13 +36,13 @@ var SlideView = Backbone.View.extend({
     var index = this.model.attributes.index;
     $('div[data-index=' + index + ']').fadeOut(function() {
       $('div[data-index=' + (index + 1) + ']').fadeIn();
-    }.bind(this));
+    });
   },
   prev: function() {
     var index = this.model.attributes.index;
     $('div[data-index=' + index + ']').fadeOut(function() {
       $('div[data-index=' + (index - 1) + ']').fadeIn();
-    }.bind(this));
+    });
   },
   initialize: function() {
     this.template = _.template($('.slides-list-template').html());
